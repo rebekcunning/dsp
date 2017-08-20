@@ -8,7 +8,6 @@ def donuts(count):
     form 'Number of donuts: <count>', where <count> is the number
     passed in. However, if the count is 10 or more, then use the word
     'many' instead of the actual count.
-
     >>> donuts(4)
     'Number of donuts: 4'
     >>> donuts(9)
@@ -18,7 +17,13 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
+
+    if count >= 10:
+        result = "many"
+    else:
+        result = str(count)
+    result_str = "Number of donuts: " + result
+    return result_str
 
 
 def both_ends(s):
@@ -37,7 +42,11 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+
+    result = ""
+    if len(s) >= 3:
+        result = s[:2]+s[-2:]
+    return result
 
 
 def fix_start(s):
@@ -56,7 +65,17 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
+    first_char = s[0]
+    new_s = ""
+    new_s += first_char
+    short_s = s[1:]
+    for i in short_s:
+        if i == first_char:
+            c = '*'
+        else:
+            c = i
+        new_s += c
+    return new_s
 
 
 def mix_up(a, b):
@@ -74,8 +93,11 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
 
+    new_a = b[:2]+a[2:]
+    new_b = a[:2]+b[2:]
+    result_str = new_a +  " " + new_b
+    return result_str
 
 def verbing(s):
     """
@@ -91,7 +113,12 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
+    if len(s) >= 3:
+        if s[-3:] == "ing":
+            s += "ly"
+        else:
+            s += "ing"
+    return s
 
 
 def not_bad(s):
@@ -111,7 +138,16 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    b = 0
+    i = s.find("not")
+    new_string = s
+    if i > 0:
+        b = s.find("bad", i)
+    if b > 0:
+        new_string = s[:i] + "good"+s[b+3:]
+    return new_string
+
+
 
 
 def front_back(a, b):
@@ -130,4 +166,29 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+
+    front_a = ""
+    front_b = ""
+    back_a = ""
+    back_b = ""
+
+    if len(a) % 2 == 0:
+        i = int(len(a)/2)
+        j = i
+    else:
+       i = int((1+len(a))/2)
+       j = int((len(a)-1)/2)+1
+    front_a = a[:i]
+    back_a = a[j:]
+
+    if len(b) % 2 == 0:
+        i = int(len(b)/2)
+        j = i
+    else:
+       i = int((1+len(b))/2)
+       j = int((len(b)-1)/2)+1
+    front_b = b[:i]
+    back_b = b[j:]
+
+
+    return front_a+front_b+back_a+back_b
