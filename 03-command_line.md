@@ -57,11 +57,11 @@ What do the following commands do:
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-`-R`
-`-t`
-`-d`
-`-l`
-`-a`
+`-R`  
+`-t`  
+`-d`  
+`-l`  
+`-a`  
 
 ---
 
@@ -69,7 +69,8 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-`xargs` calls a command using the STDOUT of the previous command as a list for STDIN
-ex: `% grep 'metis' * | xargs cksum`
+`xargs` calls a command using the STDOUT of the previous command as a list for STDIN  
+
+ex: `% grep 'metis' * | xargs cksum`  
  
 
