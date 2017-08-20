@@ -19,7 +19,16 @@ Here's a list of items with which you should be familiar:
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do.  (Use the 8 items above and add a couple of your own.)  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+* ls - show current working directory path
+* mkdir - creating a directory
+* rmdir - deleting a directory
+* touch - creating a file using `touch` command
+* rm - deleting a file
+* mv - renaming a file
+* ls -a -listing hidden files
+* cp - copying a file from one directory to another
+* more/less - view a file without editing
+* grep - find text within a directory
 
 ---
 
@@ -34,7 +43,13 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+`ls`  - list files in a directory
+`ls -a`  - list hidden files also
+`ls -l`  - list long format including permissions
+`ls -lh`  - include file size
+`ls -lah`  - hidden files and file size
+`ls -t`  - sort by time and date
+`ls -Glp`  - list with colorized output
 
 ---
 
@@ -42,7 +57,11 @@ What do the following commands do:
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+-R
+-t
+-d
+-l
+-a
 
 ---
 
@@ -50,7 +69,7 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
-
+-xargs calls a command using the STDOUT of the previous command as a list for STDIN
+ex: % grep 'metis' * | xargs cksum
  
 
