@@ -12,7 +12,7 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+Lists and Tuples are both structures for storing data.  The main difference is that tuples are immutable and lists are mutable.  Tuples are a better choice for dictionaries because of their immutability - the structure of the data is very unlikely to change and if you need to change it for a particular purpose you can just create a new tuple or list for those purposes.
 
 ---
 
@@ -20,7 +20,11 @@ How are Python lists and tuples similar and different? Which will work as keys i
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+Lists are an ordered collection of non-unique elements whereas sets are an unordered collection of unique elements.  You can iterate over a list but not a set.  Finding an element is faster in a set because it is hashable and immutable.  
+
+Examples:
+my_set = set(n\*3 for n in range(5))
+my_list = ["apples", "bananas", "oranges", "peaches"]
 
 ---
 
@@ -28,15 +32,45 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+a lambda function is an anonymous function that is used at runtime to perform actions inline.
+
+Example:
+nums = [n\*\*2 for n in range(20)]
+sorted(nums, key=lambda num: num%2 == 0)
 
 ---
 
 ### Q4. List Comprehension, Map &amp; Filter
 
-Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
+Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.   
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+List comprehension is creating a list based on a number set defined in the input.     
+Example:   
+``` 
+L = {x**2 for x in range(15)}
+```
+map equivalent: 
+```
+L = list(map(lambda x:x**2, range(15)))
+```
+filter equivalent:
+```
+squares = list(filter(lambda x: x in L, range(200)))
+```
+
+List is very open ended and can create a huge variety of types of lists.  Map is limited in that it requires applying a function to a list.  Filter is limited more in that it must pull out elements from a list for which a condition evaluates as true.     
+
+Set comprehension ex:   
+```
+import string
+s = {x for x in string.ascii_lowercase}
+```
+Dict comprehension ex:   
+```
+{x: x**3 for x in range(40) if x**3 % 3 == 0}
+```
+
+
 
 ---
 
@@ -51,7 +85,7 @@ date_start = '01-02-2013'
 date_stop = '07-28-2015'
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+937 days
 
 b.  
 ```
@@ -59,7 +93,7 @@ date_start = '12312013'
 date_stop = '05282015'  
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+513 days
 
 c.  
 ```
@@ -67,7 +101,7 @@ date_start = '15-Jan-1994'
 date_stop = '14-Jul-2015'  
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE  (answer will be in number of days)
+7850 days
 
 Place code in this file: [q5_datetime.py](python/q5_datetime.py)
 
