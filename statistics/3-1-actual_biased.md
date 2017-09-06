@@ -6,5 +6,5 @@ bias pmf Pmf({0: 0.0, 1: 0.20899335717935616, 2: 0.38323965252938175, 3: 0.25523
 actual pmf mean 1.02420515504
 biased pmf mean 2.40367910066
 ```
-!graph figure
+![PMFs figure]
 (https://github.com/rebekcunning/dsp/blob/master/statistics/Figure_1.png)
