@@ -1,24 +1,24 @@
 import thinkstats2
-import nsfg
 import thinkplot
-import math
+import pandas as pd
+import numpy as np
+import nsfg
 
-preg = nsfg.ReadFemPreg()
-live = preg[preg.outcome == 1]
-firsts = live[live.birthord == 1]
-others = live[live.birthord != 1]
+resp = nsfg.ReadFemResp()
+pmf = thinkstats2.Pmf(resp.numkdhh, label='actual')
+print("actual pmf ", pmf)
+def BiasPmf(pmf, label):
+    new_pmf = pmf.Copy(label=label)
 
-def CohenEffectSize(group1, group2):
-    print("mean for firsts", group1.mean())
-    print("mean for others", group2.mean())
-    diff = group1.mean() - group2.mean()
-
-    var1 = group1.var()
-    var2 = group2.var()
-    n1, n2 = len(group1), len(group2)
-
-    pooled_var = (n1 * var1 + n2 * var2)/(n1 + n2)
-    d = diff/ math.sqrt(pooled_var)
-    return d
-
-print("Cohen's d", CohenEffectSize(firsts.totalwgt_lb, others.totalwgt_lb))
+    for x, p in pmf.Items():
+        new_pmf.Mult(x, x)
+                                
+    new_pmf.Normalize()
+    return new_pmf
+bias_pmf = BiasPmf(pmf, 'biased')
+print("bias pmf", bias_pmf)
+thinkplot.PrePlot(2)
+thinkplot.Pmfs([pmf, bias_pmf])
+thinkplot.Show(xlabel='Number of children', ylabel='PMF')
+print("actual pmf mean", pmf.Mean())
+print("biased pmf mean", bias_pmf.Mean())
