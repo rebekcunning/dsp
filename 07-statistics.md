@@ -84,21 +84,21 @@ This is a classic example of hypothesis testing using the normal distribution.  
 
 Bayes' Theorem is an important tool in understanding what we really know, given evidence of other information we have, in a quantitative way.  It helps incorporate conditional probabilities into our conclusions.
 
-Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.  
+Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.    
 
-P(TW) = probability that elvis is a twin
-P(ID) = probability that Elvis is an identical twin
-P(F) = probability that Elvis is a fraternal twin
-
-P(TW|ID) = 1/2 because he is male
-P(ID) = 1/300
-P(TW|F) = 1/2 * 1/2 because both twins are male (.5 chance of each being a male)
-P(F) = 1/125
-
-P(ID|TW) = P(TW|ID)P(ID) / P(TW|ID)P(ID) + P(TW|F)P(F)
-P(ID|TW) = 1/2 * 1/300 / 1/2 * 1/300 + 1/4 * 1/125
-P(ID|TW) = 5/11
-
+P(TW) = probability that elvis is a twin   
+P(ID) = probability that Elvis is an identical twin   
+P(F) = probability that Elvis is a fraternal twin   
+   
+P(TW|ID) = 1/2 because he is male   
+P(ID) = 1/300   
+P(TW|F) = 1/2 * 1/2 because both twins are male (.5 chance of each being a male)   
+P(F) = 1/125   
+   
+P(ID|TW) = P(TW|ID)P(ID) / P(TW|ID)P(ID) + P(TW|F)P(F)   
+P(ID|TW) = 1/2 * 1/300 / 1/2 * 1/300 + 1/4 * 1/125   
+P(ID|TW) = 5/11   
+   
 ---
 
 ### Q6. Bayesian &amp; Frequentist Comparison  
